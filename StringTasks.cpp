@@ -1,73 +1,82 @@
 #include <iostream>
-#include <string>
-#include <cstdarg>
 #include <Windows.h>
 using namespace std;
-void main(int argc,char* argv[])
+
+void JuniorTask(void)
+{
+//2.Введите массив символов из 11 элементов. Переведите все строчные буквы-символы в верхний регистр.  
+	cout << "Base level problem: \n";
+	int count = 11;
+	cout << "Enter count symbols ]$~ ";
+	char* string = new char[count];
+	
+		/*if (strlen(string) > count || cin.fail())
+		{
+			cout << "Count of characters greater than 11!!!\nRepeat Entry$";
+			cin.clear();
+			cin.ignore(32222, '\n');
+		}*/
+		cin.getline(string, count);
+		//cin.ignore(cin.rdbuf()->in_avail());
+	cout << string<<endl;
+	for (size_t i = 0; i < strlen(string); i++)
+	{
+		if ( (string[i] >= 97 && string[i] <= 122) || (string[i] >= 'а'  && string[i] <= 'я') )//97-122 224-255
+		{
+			cout << (string[i] = static_cast<char>(static_cast<int>(string[i]) - 32));
+		}
+		
+		else
+			cout << string[i];	
+	}
+
+}
+void MediumTask(void)
+{
+	
+	/*Дан массив символов, содержащий число в двоичной системе счисления. Проверить правильность ввода этого 
+	числа (в его записи должны быть только символы 0 и 1). Если число введено неверно, повторить ввод. 
+	При правильном вводе перевести число в десятичную систему счисления.  */
+	
+	cout << "Medium level task: \n";
+	
+}
+void SeniorTasks(void)
+{
+	/*Введите массив символов из 7 элементов.Определите, является ли он симметричным(Симметричным считается массив,
+	который одинаково читается слева направо и справа налево).*/
+	cout << "High level: \n";
+	int len = 7;
+	char* str = new char[len];
+	cin.getline(str, len);
+	bool isPalindrom = true;
+	for (size_t i = 0; i < strlen(str); i++)
+	{
+		if (str[i] != str[strlen(str) - 1 - i])
+			isPalindrom = false;
+	}
+	isPalindrom ? cout << "Is palindrom." : cout << "Is not palindrom.";
+}
+int main(int argc,char** argv)
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
-	const char* mas[] =
-	{"kek","2ch","anon","sup","lurkmor","dark souls","4chan","Rumstain","2ch","2ch","system of a down"};
-	char key_word[255];
-	 cout << "]$~";
-	cin >> key_word;
-	//cout << "[$~";
-	//cout << key_word;
-	int count = 0;
-	int g = 0;
-	bool flag = false;
-	for (size_t i = 0; i < 11; i++)
-	{
-		g = 0; 
-		while (mas[i][g] != '\0')
-		{
-			if (mas[i][g] != key_word[g])
-			{
-				flag = false;
-				break;
-			}
-			
-			g++;
-		}
-		(flag) ? count++ : flag = true;
-		//cout << mas[i] << " ";
-	}
-	!count?(cout<<"Введенное вами слово не встречалось в масиве не разу!") :(cout << "]$~Count -> " << count);
-	/*
-	for (size_t i = 0; i < 8; i++)
-	{
-		g = 0;
-		while ((char)mas[g] != '\0')
-		{
-			cout << mas[g]; g++;
-		}
-		//cout << " ";
+	setlocale(0, "");
+	
+	//JuniorTask();
+	//MediumTask();
+	SeniorTasks();
+	exit(777);
+	char S[255] = { 'H','E','L','L','O','\0' };
+	int length = strlen(S);
+	int size = sizeof(S);
+	cin.getline(S, 255);
+	fprintf(stdout,"%s",S );
+	fscanf(stdin, "%s", S);
+	fprintf(stdout, "%s", S);
 
-
-	}
-	*/
-	//char symbol[255];
-	//char mas_digit[11];
-	//int count = 48;
-	//for (int i = 48,q = 0; i <= 57; i++)
-	//{
-	//	cout<< (mas_digit[q] = i) ;
-	//}
-
-	//gets(symbol);
-
-	//int i=0;
-	//for (; i < 255; i++)
-	//{
-	//	cout<< i <<"\t"<<char(i)<<endl;
-	//}
-	//
-	////48 ..57
- //  while(symbol[i]!='\0')
-	//{
-	//   cout<<symbol[i];i++;
-	//}
+//cout <<length<<endl<<size<<endl<< S << '\n';
+	cin.get();
+	
 	
 }
-
