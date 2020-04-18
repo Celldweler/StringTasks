@@ -73,8 +73,8 @@ int main(int argc,char** argv)
 	SetConsoleCP(1251);
 	setlocale(0, "");
 	
-	//JuniorTask();
-	//MediumTask();
+	JuniorTask();
+	MediumTask();
 	SeniorTasks();
 	exit(777);
 	char S[255] = { 'H','E','L','L','O','\0' };
